@@ -1,0 +1,20 @@
+// Extensiones de bootstrap
+@import "extensiones-bootstrap";
+
+// Sweetalert
+@import "node_modules/sweetalert/dist/sweetalert";
+
+// Lity
+@import "node_modules/lity/dist/lity";
+
+// Bootstrap-toggle
+@import "node_modules/bootstrap-toggle/css/bootstrap-toggle";
+
+// Algunos básicos
+img { max-width:100%; }
+
+// Select2
+@import "node_modules/select2/dist/css/select2";
+@import "node_modules/select2-bootstrap-theme/dist/select2-bootstrap";
+.select2-selection { padding-top:10px !important; }
+.select2-con-imagen img { display:inline-block; margin-right:8px; max-width:60px !important; }
