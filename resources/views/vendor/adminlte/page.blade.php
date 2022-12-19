@@ -126,14 +126,21 @@
                 <!-- Sidebar Menu -->
                 <!-- MENÚ PRINCIPAL -->
                 <ul class="sidebar-menu nav" data-widget="tree">
-                    <li class="header">GENERALES</li>
                     <li>
                         <a href="{{ url('admin/') }}">
                             <i class="fa fa-fw fa-tachometer"></i>
                             <span>Inicio</span>
                         </a>
                     </li>
-                    
+                    <li class="header">SOLICITUDES</li>
+                    <li><a href="{{ url('admin/solicitudes/plan-medico') }}">
+                        <i class="fa fa-file-archive-o"></i>
+                        <span>
+                            Plan médico
+                            <?php $sin_ver = App\Models\SolicitudPlanMedico::where('vista', false)->count(); ?>
+                            <span class="badge" style="margin-left:3px; margin-top:-3px">{{ $sin_ver }}</span>
+                        </span>
+                    </a></li>
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>
