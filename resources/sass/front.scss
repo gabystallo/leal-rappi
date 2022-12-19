@@ -1,0 +1,32 @@
+@import "reset";
+
+// Sweetalert
+@import "node_modules/sweetalert/dist/sweetalert";
+
+// Lity
+@import "node_modules/lity/dist/lity";
+
+//@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,300i,400i,600i&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,400i,700i&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap);
+
+@mixin fondo-cover() { background-size:cover; background-position:center; background-repeat:no-repeat; }
+@mixin fondo-contain() { background-size:contain; background-position:center; background-repeat:no-repeat; }
+@mixin reiniciar-input() { -webkit-appearance:none; -moz-appearance:none; -ms-appearance:none; -o-appearance:none; appearance:none; box-sizing:border-box; border-radius:0; outline:none; }
+
+// Variables
+
+$verde: #009590;
+$azul: #2F3567;
+$celeste: #48C6EB;
+$oscuro: #58595B;
+$claro: #F1F2F2;
+$negro: black;
+$blanco: white;
+
+$parcial:887px;
+
+
+@import "layout";
+
+@import "accesos-rapidos";

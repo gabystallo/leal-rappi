@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\General;
+
 if (config('app.env') === 'production') {
     \URL::forceScheme('https');
 }
@@ -23,7 +25,7 @@ Route::prefix('admin')->group(function () {
 	require __DIR__.'/admin-rutas.php';
 });
 
-Route::get('/', function() { return 'Aplicación'; });
+Route::get('/', [General::class, 'planMedico']);
 
 
 

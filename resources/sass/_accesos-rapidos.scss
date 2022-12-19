@@ -1,0 +1,107 @@
+.accesos-rapidos {
+
+	background-color:$verde;
+	position:relative;
+	--ultimoColor:$verde;
+
+	&::before { position:absolute; top:0; left:50%; right:0; bottom:0; display:block; content:''; background-color:var(--ultimoColor); }
+
+	.contenedor {
+		position:relative;
+		z-index:10;
+		display:flex; flex-flow:row nowrap;
+		max-width:800px;
+	}
+
+	.col {
+
+		padding:20px 0;
+		flex-basis:0; flex-grow:1;
+
+		&:nth-child(3n+1) { background-color:$verde; }
+		&:nth-child(3n+2) { background-color:$azul; }
+		&:nth-child(3n) { background-color:$celeste; }
+	}
+
+	.contenido {
+		padding:10px 30px;
+	}
+
+	a {
+
+		display:block; padding-left:52px; background-repeat:no-repeat; background-position:left center;
+		font-size:20px; color:white; font-weight:700; line-height:1.1em; padding-bottom:5px;
+
+		max-width:210px;
+		
+		position:relative;
+		&:after {
+			content:''; display:block; position:absolute;
+			bottom:-5px; left:52px; width:0; border-bottom:4px solid $blanco;
+			transition:width .2s ease;
+		}
+		&:hover:after {
+			width:60px;
+		}
+
+		&.activo:after {
+			width:60px;
+		}
+
+		background-size:auto 36px;
+
+		&.plan-medico { background-image:url(../img/accesos/plan-medico.svg); }
+		&.monotributo { background-image:url(../img/accesos/monotributo.svg); }
+	}
+}
+
+@media(max-width:650px) {
+
+	.accesos-rapidos {
+		display:none;
+	}
+
+}
+
+
+
+.menu-lateral {
+	width:300px; left:-300px; transition:left .2s ease;
+
+	position:fixed; top:0; bottom:0; background-color:white;
+	z-index:900;
+	padding:20px 0; padding-left:20px;
+
+	&.abierto {
+		left:0;
+		box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.6);
+		-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.6);
+		-moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.6);
+	}
+
+	.contenido {
+		& > * { padding:10px 0; padding-right:20px; border-bottom:1px solid #ccc; }
+		& > *:last-child { border-bottom:0; }
+		.logo {
+			display:flex; flex-flow:row nowrap; justify-content:space-between; align-items:center;
+			h2 {
+				width:168px; height:38px; @include fondo-contain;
+				background-image:url(../img/logo.svg);
+			}
+			a {
+				font-size:24px; font-weight:900;
+			}
+		}
+
+		ul {
+			color:$verde; font-size:16px; font-weight:600;
+			li { margin:5px 0; line-height:1.1em; }
+			&.regiones a { text-transform:uppercase; }
+			a {
+				padding:10px 0; display:block;
+				position:relative; left:0; transition:left .2s ease;
+				&:hover { left:5px; }
+			}
+		}
+	}
+}
