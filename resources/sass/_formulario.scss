@@ -1,0 +1,76 @@
+.formulario {
+
+	padding:50px 0;
+
+	.contenedor {
+		max-width:800px; margin:0 auto;
+	}
+
+	&.fondo-verde {
+		background-color:rgba(0, 149, 144, .1);
+		h2 { color:rgb(0, 149, 144); }
+	}
+	&.fondo-azul {
+		background-color:rgba(47, 52, 103, .1);
+		h2 { color:rgb(47, 52, 103); }
+	}
+	h2 {
+		font-size:28px; font-family:Roboto, sans-serif; font-weight:700;
+		margin-bottom:30px;
+	}
+
+	form {
+		display:flex; flex-flow:row wrap; align-items:flex-start;
+		.col {
+			padding:5px;
+			&.col-50 { flex-basis:50%; }
+			&.col-100 { flex-basis:100%; }
+			&.col-33 { flex-basis:33%; }
+			&.col-25 { flex-basis:25%; }
+			@media(max-width:650px) {
+				&.col-50 { flex-basis:100%; }
+				&.col-100 { flex-basis:100%; }
+				&.col-33 { flex-basis:100%; }
+				&.col-25 { flex-basis:100%; }
+			}
+		}
+		.errores {
+			color:$rojo; font-size:16px; font-weight:600;
+			li { margin-bottom:10px; }
+		}
+
+		.campo {
+			input[type="text"], input[type="email"], select {
+				width:100%; display:block; box-sizing:border-box;
+				border:1px solid #ccc; color:$oscuro;
+				font-size:15px; background-color:transparent;
+				padding:3px 12px;
+				&::placeholder { color:$oscuro; }
+			}
+			select {
+				
+			}
+			.check {
+				display:flex; align-items:flex-start;
+				input[type="checkbox"] {
+					width:40px; height:40px; margin:0; padding:0;
+					font-size:40px; margin-right:10px;
+					background-color:white;
+				}
+				label {
+					font-size:15px; color:$oscuro;
+				}
+			}
+		}
+		.boton {
+			margin-top:30px;
+			text-align:center;
+			button {
+				display:inline-block; padding:8px 12px; color:white; font-size:16px;
+				background-color:$verde;
+			}
+		}
+	}
+}
+
+

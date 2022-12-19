@@ -27,5 +27,7 @@ Route::prefix('admin')->group(function () {
 
 Route::get('/', [General::class, 'planMedico']);
 
+Route::post('solicitud-plan-medico', [General::class, 'guardarSolicitudPlanMedico'])->name('guardarSolicitudPlanMedico');
+
 
 

@@ -48,18 +48,18 @@ class General extends Controller
         }
 
 		if(!validar_recaptcha($request)) {
-			Flasher::set('No tildaste la opción -No soy un robot-.', 'Error', 'error')->flashear();
-		    return redirect(\URL::previous()."#solicitud")->withInput($request->all());
+			//Flasher::set('No tildaste la opción -No soy un robot-.', 'Error', 'error')->flashear();
+		    return redirect(\URL::previous()."#solicitud")->withInput($request->all())->withErrors(['captcha' => "No tildaste la opción -No soy un robot-."]);
 		}
 
-		$solicitud = new Consulta;
+		$solicitud = new SolicitudPlanMedico;
 		$solicitud->fill($request->all());
-		if($usuario = \Auth::guard('usuario')->user()) {
-			$solicitud->id_usuario = $usuario->id;
+		foreach(['quiero_ser_contactado'] as $check) {
+		    $solicitud->$check = boolval($request->input($check));
 		}
 		$solicitud->save();
 
-		//$contacto->notify(new NuevaConsulta($solicitud));
+		//$contacto->notify(new NuevaSolicitudPlanMedico($solicitud));
 
 		Flasher::set("Tu solicitud fue enviada exitosamente. Próximamente nos comunicaremos con vos.", "Solicitud enviada", "success")->flashear();
 		return back();

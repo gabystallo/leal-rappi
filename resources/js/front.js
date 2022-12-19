@@ -18,4 +18,14 @@ $(function() {
 
     //truquito para extender el color del último item del menú de accesos rápidos
     $('.accesos-rapidos').css('--ultimoColor', $('.accesos-rapidos .col:last-child').css('background-color'));
+
+    //menu lateral
+    $('[data-abrir-menu-lateral]').click(function(e) {
+        e.preventDefault();
+        $('.menu-lateral').addClass('abierto');
+    });
+    $('[data-cerrar-menu-lateral]').click(function(e) {
+        e.preventDefault();
+        $('.menu-lateral').removeClass('abierto');
+    });
 });

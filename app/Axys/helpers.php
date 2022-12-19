@@ -108,3 +108,48 @@ function validar_email($email)
 
     return true;
 }
+
+function validar_recaptcha($request)
+{
+	//validar captcha (esto podría y debería abstraerse a otra parte)
+	$respuesta = $request->input('g-recaptcha-response');
+	$http = new \GuzzleHttp\Client(['http_errors' => false]);
+	$resultado = $http->post('https://www.google.com/recaptcha/api/siteverify', [
+	    'multipart' => [
+	        ['name' => 'secret', 'contents' => config('google.recaptcha.secret')],
+	        ['name' => 'response', 'contents' => $respuesta],
+	        ['name' => 'remoteip', 'contents' => request()->ip()]
+	    ]
+	]);
+	
+	$j=json_decode($resultado->getBody()->getContents(),true);
+	if($j&&is_array($j)) {
+	    if(isset($j['success'])&&$j['success']) {
+	        return true;
+	    }
+	}
+	
+	return false;
+}
+
+/**
+ * Devuelve un array de nombres de columnas de spreadsheet indexadas
+ */
+function columnasSpreadsheet()
+{
+	return [
+	    'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+	    'AA', 'AB', 'AC', 'AD', 'AE', 'AF', 'AG', 'AH', 'AI', 'AJ', 'AK', 'AL', 'AM', 'AN', 'AO', 'AP', 'AQ', 'AR', 'AS', 'AT', 'AU', 'AV', 'AW', 'AX', 'AY', 'AZ',
+	    'BA', 'BB', 'BC', 'BD', 'BE', 'BF', 'BG', 'BH', 'BI', 'BJ', 'BK', 'BL', 'BM', 'BN', 'BO', 'BP', 'BQ', 'BR', 'BS', 'BT', 'BU', 'BV', 'BW', 'BX', 'BY', 'BZ',
+	];
+}
+
+/**
+ * Función que genera un título para el tag <title>
+ */
+function titulo($titulo)
+{
+	$titulo = trim($titulo);
+	if(empty($titulo)) return config('app.name');
+	return config('app.name') . ' - ' . $titulo;
+}
