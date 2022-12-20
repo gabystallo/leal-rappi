@@ -141,6 +141,14 @@
                             <span class="badge" style="margin-left:3px; margin-top:-3px">{{ $sin_ver }}</span>
                         </span>
                     </a></li>
+                    <li><a href="{{ url('admin/solicitudes/monotributo') }}">
+                        <i class="fa fa-file-archive-o"></i>
+                        <span>
+                            Monotributo
+                            <?php $sin_ver = App\Models\SolicitudMonotributo::where('vista', false)->count(); ?>
+                            <span class="badge" style="margin-left:3px; margin-top:-3px">{{ $sin_ver }}</span>
+                        </span>
+                    </a></li>
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>

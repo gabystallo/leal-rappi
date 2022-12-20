@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Dashboard;
 use App\Http\Controllers\Admin\Administradores;
 use App\Http\Controllers\Admin\SolicitudesPlanMedico;
+use App\Http\Controllers\Admin\SolicitudesMonotributo;
 
 Route::get('/', [Dashboard::class, 'index']);
 
@@ -23,3 +24,12 @@ Route::get('solicitudes/plan-medico/{solicitud}/editar', [SolicitudesPlanMedico:
 Route::post('solicitudes/plan-medico/guardar/{solicitud?}', [SolicitudesPlanMedico::class, 'guardar'])->name('guardar_solicitud_pm');
 Route::get('solicitudes/plan-medico/{solicitud}/eliminar', [SolicitudesPlanMedico::class, 'eliminar'])->name('eliminar_solicitud_pm');
 Route::get('solicitudes/plan-medico/{solicitud}/desver', [SolicitudesPlanMedico::class, 'desver'])->name('desver_solicitud_pm');
+
+// solicitudes/monotributo
+Route::get('solicitudes/monotributo', [SolicitudesMonotributo::class, 'index'])->name('solicitudes_mtb');
+Route::get('solicitudes/monotributo/exportar', [SolicitudesMonotributo::class, 'exportar'])->name('exportar_solicitudes_mtb');
+Route::get('solicitudes/monotributo/crear', [SolicitudesMonotributo::class, 'crear'])->name('crear_solicitud_mtb');
+Route::get('solicitudes/monotributo/{solicitud}/editar', [SolicitudesMonotributo::class, 'editar'])->name('editar_solicitud_mtb');
+Route::post('solicitudes/monotributo/guardar/{solicitud?}', [SolicitudesMonotributo::class, 'guardar'])->name('guardar_solicitud_mtb');
+Route::get('solicitudes/monotributo/{solicitud}/eliminar', [SolicitudesMonotributo::class, 'eliminar'])->name('eliminar_solicitud_mtb');
+Route::get('solicitudes/monotributo/{solicitud}/desver', [SolicitudesMonotributo::class, 'desver'])->name('desver_solicitud_mtb');

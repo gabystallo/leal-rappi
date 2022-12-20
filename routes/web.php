@@ -26,8 +26,8 @@ Route::prefix('admin')->group(function () {
 });
 
 Route::get('/', [General::class, 'planMedico']);
-
 Route::post('solicitud-plan-medico', [General::class, 'guardarSolicitudPlanMedico'])->name('guardarSolicitudPlanMedico');
-
+Route::get('obtene-tu-monotributo', [General::class, 'monotributo']);
+Route::post('solicitud-monotributo', [General::class, 'guardarSolicitudMonotributo'])->name('guardarSolicitudMonotributo');
 
 
