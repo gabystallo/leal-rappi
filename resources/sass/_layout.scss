@@ -136,19 +136,16 @@ header {
 				&:hover { transform:none; }
 			}
 		}
-		.usuario {
-			padding-right:20px;
-		}
 
-		.desplegar-menu-responsive {
-			display:block;
-			position:absolute; width:20px; height:20px;
-			bottom:31px; left:20px;
-			@include fondo-contain; background-position:left center;
-			background-size:20px auto; background-image:url(../img/menu.svg);
-			font-size:14px; text-transform:uppercase; font-weight:600;
-			margin-right:15px;
-		}
+		// .desplegar-menu-responsive {
+		// 	display:block;
+		// 	position:absolute; width:20px; height:20px;
+		// 	bottom:31px; left:20px;
+		// 	@include fondo-contain; background-position:left center;
+		// 	background-size:20px auto; background-image:url(../img/menu.svg);
+		// 	font-size:14px; text-transform:uppercase; font-weight:600;
+		// 	margin-right:15px;
+		// }
 	}
 }
 
