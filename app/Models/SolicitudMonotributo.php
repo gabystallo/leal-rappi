@@ -15,5 +15,8 @@ class SolicitudMonotributo extends Model
         return $this->created_at->format('d/m/Y H:i');
     }
     
-    
+    public function archivos()
+    {
+        return $this->hasMany(ArchivoSolicitudMonotributo::class, 'id_solicitud');
+    }
 }

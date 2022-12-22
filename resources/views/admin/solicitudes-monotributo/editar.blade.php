@@ -21,5 +21,17 @@
             </div>
         </form>
     </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Acciones</h3>
+                </div>
+                <div class="box-body">
+                    <a href="{{ route('archivos_solicitud_mtb', $solicitud) }}" class="btn btn-primary">Cargar archivos adjuntos ({{ $solicitud->archivos()->count() }})</a>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
 

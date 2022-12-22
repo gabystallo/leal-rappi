@@ -21,7 +21,7 @@
                 </div>
                 <div class="box-body">
                     <a href="{{ route('crear_solicitud_mtb') }}" class="btn btn-primary">Crear solicitud</a>
-                    <a href="{{ route('exportar_solicitudes_pm') }}" class="btn btn-success">Exportar todo</a>
+                    <a href="{{ route('exportar_solicitudes_mtb') }}" class="btn btn-success">Exportar todo</a>
                 </div>
             </div>
         </div>

@@ -49,3 +49,36 @@
         <input type="checkbox" data-toggle="toggle" data-on="Sí" data-off="No" name="quiero_ser_contactado" value="1" {{ old('quiero_ser_contactado', $solicitud->quiero_ser_contactado) ? 'checked' : '' }}>
     </div>
 </div>
+
+<div class="col-md-12"><hr></div>
+
+<div class="col-md-6 form-group{{ has_error($errors,'clave_fiscal') }}">
+    <label>Clave fiscal</label>
+    <input type="text" class="form-control" name="clave_fiscal" value="{{ old('clave_fiscal',$solicitud->clave_fiscal) }}">
+</div>
+<div class="col-md-6 form-group{{ has_error($errors,'forma_contacto') }}">
+    <label>Forma de contacto</label>
+    <input type="text" class="form-control" name="forma_contacto" value="{{ old('forma_contacto',$solicitud->forma_contacto) }}">
+</div>
+
+<div class="col-md-12 form-group{{ has_error($errors,'observaciones') }}">
+    <label>Observaciones</label>
+    <textarea class="form-control" name="observaciones" style="height:180px;">{{ old('observaciones',$solicitud->observaciones) }}</textarea>
+</div>
+
+<div class="col-md-6 form-group{{ has_error($errors,'solicitud_afiliacion') }}">
+    <label>Solicitud de afiliacion</label>
+    <select name="solicitud_afiliacion" class="form-control">
+        <option value="">Seleccionar</option>
+        <option value="Sí"{{ selected("Sí"==old('solicitud_afiliacion', $solicitud->solicitud_afiliacion)) }}>Sí</option>
+        <option value="No"{{ selected("No"==old('solicitud_afiliacion', $solicitud->solicitud_afiliacion)) }}>No</option>
+    </select>
+</div>
+<div class="col-md-6 form-group{{ has_error($errors,'afiliado') }}">
+    <label>Afiliado</label>
+    <select name="afiliado" class="form-control">
+        <option value="">Seleccionar</option>
+        <option value="Sí"{{ selected("Sí"==old('afiliado', $solicitud->afiliado)) }}>Sí</option>
+        <option value="No"{{ selected("No"==old('afiliado', $solicitud->afiliado)) }}>No</option>
+    </select>
+</div>

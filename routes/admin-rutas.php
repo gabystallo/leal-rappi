@@ -5,6 +5,8 @@ use App\Http\Controllers\Admin\Dashboard;
 use App\Http\Controllers\Admin\Administradores;
 use App\Http\Controllers\Admin\SolicitudesPlanMedico;
 use App\Http\Controllers\Admin\SolicitudesMonotributo;
+use App\Http\Controllers\Admin\ArchivosSolicitudPlanMedico;
+use App\Http\Controllers\Admin\ArchivosSolicitudMonotributo;
 
 Route::get('/', [Dashboard::class, 'index']);
 
@@ -24,6 +26,15 @@ Route::get('solicitudes/plan-medico/{solicitud}/editar', [SolicitudesPlanMedico:
 Route::post('solicitudes/plan-medico/guardar/{solicitud?}', [SolicitudesPlanMedico::class, 'guardar'])->name('guardar_solicitud_pm');
 Route::get('solicitudes/plan-medico/{solicitud}/eliminar', [SolicitudesPlanMedico::class, 'eliminar'])->name('eliminar_solicitud_pm');
 Route::get('solicitudes/plan-medico/{solicitud}/desver', [SolicitudesPlanMedico::class, 'desver'])->name('desver_solicitud_pm');
+// archivos
+Route::get('solicitudes/plan-medico/{solicitud}/archivos', [ArchivosSolicitudPlanMedico::class, 'index'])->name('archivos_solicitud_pm');
+Route::get('solicitudes/plan-medico/{solicitud}/archivos/crear', [ArchivosSolicitudPlanMedico::class, 'crear'])->name('crear_archivo_solicitud_pm');
+Route::get('solicitudes/plan-medico/{solicitud}/archivos/{archivo}/editar', [ArchivosSolicitudPlanMedico::class, 'editar'])->name('editar_archivo_solicitud_pm');
+Route::post('solicitudes/plan-medico/{solicitud}/archivos/guardar/{archivo?}', [ArchivosSolicitudPlanMedico::class, 'guardar'])->name('guardar_archivo_solicitud_pm');
+Route::get('solicitudes/plan-medico/{solicitud}/archivos/{archivo}/eliminar', [ArchivosSolicitudPlanMedico::class, 'eliminar'])->name('eliminar_archivo_solicitud_pm');
+Route::post('solicitudes/plan-medico/{solicitud}/archivos/ordenar', [ArchivosSolicitudPlanMedico::class, 'ordenar'])->name('ordenar_archivos_solicitud_pm');
+Route::get('solicitudes/plan-medico/{solicitud}/archivos/{archivo}/eliminar-archivo', [ArchivosSolicitudPlanMedico::class, 'eliminarArchivo'])->name('eliminar_archivo_archivo_solicitud_pm');
+
 
 // solicitudes/monotributo
 Route::get('solicitudes/monotributo', [SolicitudesMonotributo::class, 'index'])->name('solicitudes_mtb');
@@ -33,3 +44,11 @@ Route::get('solicitudes/monotributo/{solicitud}/editar', [SolicitudesMonotributo
 Route::post('solicitudes/monotributo/guardar/{solicitud?}', [SolicitudesMonotributo::class, 'guardar'])->name('guardar_solicitud_mtb');
 Route::get('solicitudes/monotributo/{solicitud}/eliminar', [SolicitudesMonotributo::class, 'eliminar'])->name('eliminar_solicitud_mtb');
 Route::get('solicitudes/monotributo/{solicitud}/desver', [SolicitudesMonotributo::class, 'desver'])->name('desver_solicitud_mtb');
+// archivos
+Route::get('solicitudes/monotributo/{solicitud}/archivos', [ArchivosSolicitudMonotributo::class, 'index'])->name('archivos_solicitud_mtb');
+Route::get('solicitudes/monotributo/{solicitud}/archivos/crear', [ArchivosSolicitudMonotributo::class, 'crear'])->name('crear_archivo_solicitud_mtb');
+Route::get('solicitudes/monotributo/{solicitud}/archivos/{archivo}/editar', [ArchivosSolicitudMonotributo::class, 'editar'])->name('editar_archivo_solicitud_mtb');
+Route::post('solicitudes/monotributo/{solicitud}/archivos/guardar/{archivo?}', [ArchivosSolicitudMonotributo::class, 'guardar'])->name('guardar_archivo_solicitud_mtb');
+Route::get('solicitudes/monotributo/{solicitud}/archivos/{archivo}/eliminar', [ArchivosSolicitudMonotributo::class, 'eliminar'])->name('eliminar_archivo_solicitud_mtb');
+Route::post('solicitudes/monotributo/{solicitud}/archivos/ordenar', [ArchivosSolicitudMonotributo::class, 'ordenar'])->name('ordenar_archivos_solicitud_mtb');
+Route::get('solicitudes/monotributo/{solicitud}/archivos/{archivo}/eliminar-archivo', [ArchivosSolicitudMonotributo::class, 'eliminarArchivo'])->name('eliminar_archivo_archivo_solicitud_mtb');

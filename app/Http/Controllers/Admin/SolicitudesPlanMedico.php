@@ -111,6 +111,12 @@ class SolicitudesPlanMedico extends Controller
 
         $solicitud->fill($request->all());
 
+        $solicitud->clave_fiscal = $request->input('clave_fiscal');
+        $solicitud->forma_contacto = $request->input('forma_contacto');
+        $solicitud->observaciones = $request->input('observaciones');
+        $solicitud->solicitud_afiliacion = $request->input('solicitud_afiliacion');
+        $solicitud->afiliado = $request->input('afiliado');
+
         foreach(['quiero_ser_contactado'] as $check) {
             $solicitud->$check = boolval($request->input($check));
         }
@@ -137,7 +143,7 @@ class SolicitudesPlanMedico extends Controller
         ];
 
         $solicitudes = Solicitud::orderBy('id', 'desc')->get();
-        $columnas = ['ID', 'Fecha', 'Nombre', 'Email', 'CUIT/CUIL', 'Celular', 'ID Rappi', 'Nacionalidad', 'Monotributista', 'Quiero ser contactado'];
+        $columnas = ['ID', 'Fecha', 'Nombre', 'Email', 'CUIT/CUIL', 'Celular', 'ID Rappi', 'Nacionalidad', 'Monotributista', 'Quiero ser contactado', 'Clave fiscal', 'Forma de contacto', 'Observaciones', 'Solicitud de afiliacion', 'Afiliado'];
 
         $callback = function() use ($solicitudes, $columnas)
         {
@@ -156,6 +162,11 @@ class SolicitudesPlanMedico extends Controller
                     $solicitud->nacionalidad,
                     $solicitud->monotributista,
                     $solicitud->quiero_ser_contactado,
+                    $solicitud->clave_fiscal,
+                    $solicitud->forma_contacto,
+                    $solicitud->observaciones,
+                    $solicitud->solicitud_afiliacion,
+                    $solicitud->afiliado,
                 ]);
             }
             fclose($archivo);
