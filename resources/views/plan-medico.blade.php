@@ -58,7 +58,16 @@
 						</select>
 					</div>
 				</div>
-				<div class="col col-50"></div>
+				<div class="col col-50">
+					<div class="campo">
+						<select name="horario_contacto" class="form-control">
+						    <option value="">Horario de contacto</option>
+						    <option value="09 a 12 hs"{{ selected("09 a 12 hs"==old('horario_contacto')) }}>09 a 12 hs</option>
+						    <option value="15 a 18 hs"{{ selected("15 a 18 hs"==old('horario_contacto')) }}>15 a 18 hs</option>
+						    <option value="19 a 22 hs"{{ selected("19 a 22 hs"==old('horario_contacto')) }}>19 a 22 hs</option>
+						</select>
+					</div>
+				</div>
 				<div class="col col-50">
 					<div class="campo">
 						<div class="check">

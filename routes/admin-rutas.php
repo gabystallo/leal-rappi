@@ -26,6 +26,7 @@ Route::get('solicitudes/plan-medico/{solicitud}/editar', [SolicitudesPlanMedico:
 Route::post('solicitudes/plan-medico/guardar/{solicitud?}', [SolicitudesPlanMedico::class, 'guardar'])->name('guardar_solicitud_pm');
 Route::get('solicitudes/plan-medico/{solicitud}/eliminar', [SolicitudesPlanMedico::class, 'eliminar'])->name('eliminar_solicitud_pm');
 Route::get('solicitudes/plan-medico/{solicitud}/desver', [SolicitudesPlanMedico::class, 'desver'])->name('desver_solicitud_pm');
+Route::post('solicitudes/plan-medico/importar', [SolicitudesPlanMedico::class, 'importar'])->name('importar_solicitudes_pm');
 // archivos
 Route::get('solicitudes/plan-medico/{solicitud}/archivos', [ArchivosSolicitudPlanMedico::class, 'index'])->name('archivos_solicitud_pm');
 Route::get('solicitudes/plan-medico/{solicitud}/archivos/crear', [ArchivosSolicitudPlanMedico::class, 'crear'])->name('crear_archivo_solicitud_pm');
@@ -44,6 +45,7 @@ Route::get('solicitudes/monotributo/{solicitud}/editar', [SolicitudesMonotributo
 Route::post('solicitudes/monotributo/guardar/{solicitud?}', [SolicitudesMonotributo::class, 'guardar'])->name('guardar_solicitud_mtb');
 Route::get('solicitudes/monotributo/{solicitud}/eliminar', [SolicitudesMonotributo::class, 'eliminar'])->name('eliminar_solicitud_mtb');
 Route::get('solicitudes/monotributo/{solicitud}/desver', [SolicitudesMonotributo::class, 'desver'])->name('desver_solicitud_mtb');
+Route::post('solicitudes/monotributo/importar', [SolicitudesMonotributo::class, 'importar'])->name('importar_solicitudes_mtb');
 // archivos
 Route::get('solicitudes/monotributo/{solicitud}/archivos', [ArchivosSolicitudMonotributo::class, 'index'])->name('archivos_solicitud_mtb');
 Route::get('solicitudes/monotributo/{solicitud}/archivos/crear', [ArchivosSolicitudMonotributo::class, 'crear'])->name('crear_archivo_solicitud_mtb');

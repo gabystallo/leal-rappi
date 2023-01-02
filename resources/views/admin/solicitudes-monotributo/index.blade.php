@@ -22,6 +22,16 @@
                 <div class="box-body">
                     <a href="{{ route('crear_solicitud_mtb') }}" class="btn btn-primary">Crear solicitud</a>
                     <a href="{{ route('exportar_solicitudes_mtb') }}" class="btn btn-success">Exportar todo</a>
+                    <form method="post" enctype="multipart/form-data" action="{{ route('importar_solicitudes_mtb') }}">
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                            <label>Archivo</label>
+                            <input type="file" name="archivo" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-warning btn-sm">Importar</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

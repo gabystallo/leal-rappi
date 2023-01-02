@@ -8,11 +8,11 @@ class SolicitudPlanMedico extends Model
 {
 
     protected $table = 'solicitudes_plan_medico';
-    protected $fillable = ['nombre', 'email', 'cuit', 'celular', 'id_rappi', 'nacionalidad', 'monotributista'];
+    protected $fillable = ['nombre', 'email', 'cuit', 'celular', 'id_rappi', 'nacionalidad', 'monotributista', 'horario_contacto'];
     
     public function getFechaAttribute()
     {
-        return $this->created_at->format('d/m/Y H:i');
+        return $this->created_at->format('d/m/Y H:i:s');
     }
     
     public function archivos()

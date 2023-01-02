@@ -34,6 +34,7 @@ class General extends Controller
             'id_rappi' => 'required',
             'nacionalidad' => 'required',
             'monotributista' => 'required',
+            'horario_contacto' => 'required',
 		];
 
 		//Ejecutar validaciones /////////
@@ -84,6 +85,7 @@ class General extends Controller
 	            'id_rappi' => 'required',
 	            'nacionalidad' => 'required',
 	            'monotributista' => 'required',
+	            'horario_contacto' => 'required',
 			];
 
 			//Ejecutar validaciones /////////

@@ -49,6 +49,15 @@
         <input type="checkbox" data-toggle="toggle" data-on="Sí" data-off="No" name="quiero_ser_contactado" value="1" {{ old('quiero_ser_contactado', $solicitud->quiero_ser_contactado) ? 'checked' : '' }}>
     </div>
 </div>
+<div class="col-md-4 form-group{{ has_error($errors,'horario_contacto') }}">
+    <label>Horario de contacto</label>
+    <select name="horario_contacto" class="form-control">
+        <option value="">Seleccionar</option>
+        <option value="09 a 12 hs"{{ selected("09 a 12 hs"==old('horario_contacto', $solicitud->horario_contacto)) }}>09 a 12 hs</option>
+        <option value="15 a 18 hs"{{ selected("15 a 18 hs"==old('horario_contacto', $solicitud->horario_contacto)) }}>15 a 18 hs</option>
+        <option value="19 a 22 hs"{{ selected("19 a 22 hs"==old('horario_contacto', $solicitud->horario_contacto)) }}>19 a 22 hs</option>
+    </select>
+</div>
 
 <div class="col-md-12"><hr></div>
 
