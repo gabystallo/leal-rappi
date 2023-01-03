@@ -195,9 +195,12 @@ class SolicitudesPlanMedico extends Controller
                 //$registro[$i] =  preg_replace("/ +/", ' ', trim(utf8_encode($registro[$i])));
                 $registro[$i] =  preg_replace("/ +/", ' ', trim($registro[$i]));
             }
-
-            $solicitud = new Solicitud;
-            $c_nuevas += 1;
+            
+            $solicitud = Solicitud::where('cuit', $registro[4])->first();
+            if(!$solicitud) {
+                $solicitud = new Solicitud;
+                $c_nuevas += 1;
+            }
 
             $fecha = null;
             try {
