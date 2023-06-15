@@ -7,7 +7,7 @@
 			<h2>¿Querés solicitar tu plan médico exclusivo para repartidores Rappi sin costo ni coseguros?</h2>
 			<div class="botones">
 				<a href="http://lealmedica.com.ar/cartillas/CARTILLA-AMBA-100.pdf " target="_blank">VER CARTILLA</a>
-				<a href="http://lealmedica.com.ar/planes-detalle.php?plan=100 " target="_blank">VER PLAN</a>
+				<a href="{{ url('plan_rappi.pdf') }}" target="_blank">VER PLAN</a>
 			</div>
 			<form method="post" action="{{ route('guardarSolicitudPlanMedico') }}">
 				{{ csrf_field() }}
